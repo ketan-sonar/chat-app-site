@@ -49,12 +49,12 @@ export default function ChatsPage() {
   useEffect(() => {
     setLoading(true);
     fetchCurrUser();
-  }, []);
+  }, [fetchCurrUser]);
 
   useEffect(() => {
     setLoading(true);
     fetchConversations();
-  }, [currUserId]);
+  }, [currUserId, fetchConversations]);
 
   const getSenderFromConversation = (conv: ConversationWithMembers) => {
     return conv.members.find((m) => m.id !== currUserId);

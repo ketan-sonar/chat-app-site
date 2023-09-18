@@ -59,7 +59,7 @@ export default function ParticularConversation({
         ]);
       }
     );
-  }, []);
+  }, [params.conversationId, session]);
 
   useEffect(() => {
     socket.current?.on("welcome", (msg: string) => {
@@ -69,7 +69,7 @@ export default function ParticularConversation({
 
   useEffect(() => {
     setSender(conversation?.members.find((m) => m.id !== currUserId));
-  }, [conversation]);
+  }, [conversation, currUserId]);
 
   useEffect(() => {
     if (currUserId) {
@@ -80,7 +80,7 @@ export default function ParticularConversation({
       socket.current?.emit("addUser", currUserId);
       socket.current?.on("getUsers", (users) => console.log(users));
     }
-  }, [currUserId]);
+  }, [currUserId, params.conversationId]);
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView();
