@@ -2,7 +2,7 @@
 
 import { Conversation, User } from "@prisma/client";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -26,7 +26,7 @@ export default function ChatsPage() {
   const [loading, setLoading] = useState(status === "loading");
   const [newChat, setNewChat] = useState("");
 
-  const fetchCurrUser = () => {
+  const fetchCurrUser = useCallback(() => {
     getCurrUserId(session)
       .then((cuId: string) => {
         setCurrUserId(cuId);
@@ -34,7 +34,7 @@ export default function ChatsPage() {
       .finally(() => {
         setLoading(false);
       });
-  };
+  }, []);
 
   const fetchConversations = () => {
     getConversations(currUserId)
