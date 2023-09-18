@@ -34,9 +34,9 @@ export default function ChatsPage() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [session]);
 
-  const fetchConversations = () => {
+  const fetchConversations = useCallback(() => {
     getConversations(currUserId)
       .then((convs: ConversationWithMembers[]) => {
         setConversations(convs);
@@ -44,7 +44,7 @@ export default function ChatsPage() {
       .finally(() => {
         setLoading(false);
       });
-  };
+  }, [currUserId]);
 
   useEffect(() => {
     setLoading(true);
