@@ -127,7 +127,7 @@ export default function ParticularConversation({
             </>
           )}
         </div>
-        <div className="chats flex-grow bg-white w-full my-4 flex flex-col space-y-4 overflow-auto p-4 py-0 self-start">
+        <div className="chats flex-grow bg-white w-full my-4 flex flex-col space-y-4 overflow-auto p-4 pb-0 self-start">
           {chats.map((chat, i) => {
             return (
               <div
