@@ -35,7 +35,7 @@ export default function ParticularConversation({
       setConversation(conv);
     });
 
-    socket.current = io("ws://chat-app-socket-server-umber.vercel.app:8900");
+    socket.current = io("ws://localhost:8900/");
     socket.current.on(
       "getMessage",
       ({
