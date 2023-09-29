@@ -1,7 +1,7 @@
 # Chat App build using NextJS
 
 A simple chat application made using NextJS 13.  
-[Click here](https://chat-app-site-eta.vercel.app/) to visit the deployed version. (Note: The deployed version hasn't been integrated with the SocketIO server yet. It will soon be done. Until then it will not be "real-time", you will have to refresh the page to see any changes.)
+[Click here](https://chat-app-site-ketan-sonar.vercel.app/) to visit the deployed version. (Note: The deployed version hasn't been integrated with the SocketIO server yet. It will soon be done. Until then it will not be "real-time", you will have to refresh the page to see any changes.)
 
 ## Tech Stack Used
 
